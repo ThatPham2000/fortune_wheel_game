@@ -107,8 +107,9 @@ class _SpinWheelState extends State<SpinWheel> {
                     ? null
                     : setState(() {
                         do {
-                          _indexSelected =
-                              Fortune.randomInt(0, GiftList.items.length);
+                          // _indexSelected =
+                          //     Fortune.randomInt(0, GiftList.items.length);
+                          _indexSelected = GiftList.generateIndexAlgorithm();
                         } while (GiftList.items[_indexSelected].amount == 0 &&
                             !GiftList.checkOutOfGift());
                         if (!GiftList.checkOutOfGift()) {
